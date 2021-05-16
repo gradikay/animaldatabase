@@ -1,0 +1,13 @@
+/*
+    Different colors
+*/
+.bg-endangered {
+    background-color: #ffebee;
+}
+.bg-extinct {
+    background-color: #fff3e0;
+}
+.bg-new-species {
+    background-color: #e0f7fa;
+}
+
