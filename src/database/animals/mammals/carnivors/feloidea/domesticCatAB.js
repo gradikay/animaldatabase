@@ -1,10 +1,9 @@
 // List of cats from "a" to "b"
 // This list does not include big cats
 
-let catsAB = [
+const catsAB = [
     {
     
-    "id": "1",
     "name": "Abyssinian",
     "weight_1": "0",
     "weight_2": "0",
@@ -25,7 +24,6 @@ let catsAB = [
     "edited_date": "2015-02-13 21:14:18"
   },
     {
-    "id": "2",
     "name": "American Bobtail",
     "weight_1": "0",
     "weight_2": "0",
@@ -46,7 +44,6 @@ let catsAB = [
     "edited_date": "2015-02-13 21:14:18"
   },
     {
-    "id": "3",
     "name": "American Curl",
     "weight_1": "0",
     "weight_2": "0",
@@ -67,7 +64,6 @@ let catsAB = [
     "edited_date": "2015-02-13 21:14:18"
   },
     {
-    "id": "4",
     "name": "American Shorthair",
     "weight_1": "0",
     "weight_2": "0",
@@ -88,7 +84,6 @@ let catsAB = [
     "edited_date": "2015-02-13 21:14:18"
   },
     {
-    "id": "5",
     "name": "American Wirehair",
     "weight_1": "0",
     "weight_2": "0",
@@ -109,7 +104,6 @@ let catsAB = [
     "edited_date": "2015-02-13 21:14:18"
     },
     {
-        "id": "6",
         "name": "Balinese",
         "weight_1": "0",
         "weight_2": "0",
@@ -130,7 +124,6 @@ let catsAB = [
         "edited_date": "2015-02-13 21:14:18"
     },
     {
-        "id": "7",
         "name": "Bengal",
         "weight_1": "0",
         "weight_2": "0",
@@ -151,7 +144,6 @@ let catsAB = [
         "edited_date": "2015-02-13 21:14:18"
     },
     {
-        "id": "8",
         "name": "Birman",
         "weight_1": "0",
         "weight_2": "0",
@@ -172,7 +164,6 @@ let catsAB = [
         "edited_date": "2015-02-13 21:14:18"
     },
     {
-        "id": "9",
         "name": "Bombay",
         "weight_1": "0",
         "weight_2": "0",
@@ -193,7 +184,6 @@ let catsAB = [
         "edited_date": "2015-02-13 21:14:18"
     },
     {
-        "id": "10",
         "name": "British Shorthair",
         "weight_1": "0",
         "weight_2": "0",
@@ -214,4 +204,4 @@ let catsAB = [
         "edited_date": "2015-02-13 21:14:18"
     }
 ]
-export default catsAB;
+export { catsAB };

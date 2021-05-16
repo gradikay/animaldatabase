@@ -1,7 +1,7 @@
 // List of cats from "s" to "z"
 // This list does not include big cats
 
-let catsSZ = [
+const catsSZ = [
   {
     "id": "32",
     "name": "Scottish Fold",
@@ -235,4 +235,4 @@ let catsSZ = [
     }
 ]
 
-export default catsSZ;
+export { catsSZ };

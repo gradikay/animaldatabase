@@ -213,4 +213,4 @@ let catsCK = [
     "edited_date": "2015-02-13 21:14:18"
     }
 ]
-export default catsCK;
+export { catsCK };

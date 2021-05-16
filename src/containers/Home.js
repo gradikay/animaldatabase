@@ -1,10 +1,13 @@
 // This file is exported to ---> src/Routes.js
 // React required
 import React from "react";
+import { animals } from "../database/animals/allAnimals"
 // -------------- Application Begins Bellow ------------ \\
 
 // Main Home Function
 export default function Home() {
+
+    console.log(animals)
 
     // Return UI
     return (

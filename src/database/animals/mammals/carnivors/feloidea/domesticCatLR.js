@@ -214,4 +214,4 @@ let catsLR = [
   }
 ]
 
-export default catsLR;
+export { catsLR };
