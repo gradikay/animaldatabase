@@ -2,10 +2,15 @@
 // React required
 import React from "react";
 import { Link } from "react-router-dom";
+// Data / Collections
+import { animals } from "../database/animals/allAnimals";
 // -------------- Application Begins Bellow ------------ \\
 
 // Main Footer Function
 export default function Footer() {
+
+    // Important variables
+    const totalAnimals = animals[0].count_species;
 
     // Return UI
     return (
@@ -13,7 +18,7 @@ export default function Footer() {
             <div className="row">
 
                 {/* About Component */}
-                <About />
+                <About totalAnimals={totalAnimals} />
 
                 {/* Links Component */}
                 <Links />                
@@ -52,8 +57,10 @@ function FooterLink(props) {
 }
 
 // About Component
-function About() {
+function About(props) {
 
+    // Important variables
+    const { totalAnimals } = props
     // Return UI
     return (
         <div className="col-md-3">
@@ -68,7 +75,7 @@ function About() {
                 <span className="border-bottom border-warning">est!</span>
             </p>
             <p> Built by animal lover for all animal lovers around the world. </p>
-            <p> We currently have 8,004 animals names in our collection, ... of course we want more. </p>
+            <p> We currently have {totalAnimals} animals names in our collection, ... of course we want more. </p>
             <p> - <i className="border-bottom border-warning"> Would you like to help? </i> </p>
             <p className="border border-secondary rounded p-2 text-center shadow">
                 <span> visit our </span>

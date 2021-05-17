@@ -1,13 +1,16 @@
 // This file is exported to ---> src/Routes.js
 // React required
 import React from "react";
-import { animals } from "../database/animals/allAnimals"
+// Data / Collections
+import { animals } from "../database/animals/allAnimals";
+import { breedList } from "../database/animals/allAnimalWithBreed";
 // -------------- Application Begins Bellow ------------ \\
 
 // Main Home Function
 export default function Home() {
 
-    console.log(animals)
+    console.log(animals);
+    console.log(breedList);
 
     // Return UI
     return (
@@ -166,24 +169,34 @@ function Breeds() {
                     </button>
                 </div>
                 <div className="col-md-12 alert-primary border rounded border-primary text-center p-3 py-4">
+
+                    {/* Heading */}
                     <h3 className="mb-3">
                         <strong> Notable breeds </strong>
                     </h3>
-                    <div className="btn-group w-100 shadow-sm mb-3">
-                        <button type="button" className="btn btn-primary alert-primary border-primary">
-                            <b> Snakes </b>
-                        </button>
-                        <button type="button" className="btn btn-primary alert-primary border-primary">
-                            <b> Turtles </b>                           
-                        </button>
-                    </div>
-                    <div className="btn-group shadow-sm w-100">
-                        <button type="button" className="btn btn-primary alert-primary border-primary">
-                            <b> Cats </b>
-                        </button>
-                        <button type="button" className="btn btn-primary alert-primary border-primary">
-                            <b> Dogs </b>
-                        </button>
+
+                    {/* Button Group */}
+                    <div className="row m-0">
+                        {
+                            breedList.map((breed, i) => {
+
+                                // Important variables
+                                const name = breed.name;
+                                const count = breed.count_species;
+
+                                // Return UI
+                                return (
+                                    <div className="col-md-6 p-0 px-2" key={i++}>
+                                        <button
+                                            type="button"
+                                            className="btn btn-primary alert-primary border-primary text-capitalize mb-2 shadow-sm w-100"
+                                        >
+                                                <b> {name} </b> - <span> { count } species </span>
+                                        </button>
+                                    </div>
+                                    );
+                            })
+                        }
                     </div>
                 </div>
             </div>
