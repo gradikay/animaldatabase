@@ -1,16 +1,16 @@
-import { catsAB } from "./domesticCatAB";
-import { catsCK } from "./domesticCatCK";
-import { catsLR } from "./domesticCatLR";
-import { catsSZ } from "./domesticCatSZ";
+import { catsAB as a } from "./domesticCatAB";
+import { catsCK as b } from "./domesticCatCK";
+import { catsLR as c } from "./domesticCatLR";
+import { catsSZ as d } from "./domesticCatSZ";
 
 // Declaring an empty array for all domestic cats
-const listOfCats = [];
+const list = [];
 
-// adding all cats together
-const allCats = listOfCats.concat(catsAB, catsCK, catsLR, catsSZ);
+// adding all cats together list
+const all = list.concat(a, b, c, d);
 
 // Counting all domestic cats in collection
-const allCatsSpeciesCount = allCats.length; // count all species of cats
+const count = all.length; // count all species of cats
 
 // Setting variables for domestic cats
 // This variables includes all facts, description, and miscellaneous 
@@ -21,8 +21,8 @@ const domesticCats = [
         "scientific_name": "Felis catus",
         "type": "species",
         "other_name": ["felis catus"],
-        "count_species": allCatsSpeciesCount,
-        "list": allCats,
+        "count_species": count,
+        "list": all,
         "has_breeds": true,
         "is_extinct": false,
         "is_endagered": false,

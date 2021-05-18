@@ -3,7 +3,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // Data / Collections
-import { animals } from "../database/animals/allAnimals";
+import { animals } from "../database/animals/all_animals";
 // -------------- Application Begins Bellow ------------ \\
 
 // Main Footer Function

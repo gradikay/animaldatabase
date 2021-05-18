@@ -1,14 +1,17 @@
-import { domesticCats } from "./domesticCat";
+import { domesticCats as a } from "./domesticCat";
 
 // Declaring an empty array for all carnivors
-const listOfFelines = [];
+const list = [];
 
 // Adding all felines together
-const allFelines = listOfFelines.concat(domesticCats);
+const all = list.concat(a);
+
+// Storing species count
+const a1 = a[0].count_species;
 
 // Counting all felines in collection
-const allFelinesSpeciesCount  = domesticCats[0].count_species; // count all species of felines
-const allFelinesSuborderCount = allFelines.length; // count all suborder of felines
+const countSpecies  = a1; // count all species of felines
+const count = all.length; // count all suborder of felines
 
 // Setting variables for felines
 // This variables includes all facts, description, and miscellaneous 
@@ -22,9 +25,9 @@ const felines = [
         "facts": [
             "This suborder contains cat-like carnivors",
         ],
-        "count_species": allFelinesSpeciesCount,
-        "count_suborder": allFelinesSuborderCount,
-        "list": allFelines,
+        "count_species": countSpecies,
+        "count_suborder": count,
+        "list": all,
     }
 ];
 

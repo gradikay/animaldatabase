@@ -2,8 +2,8 @@
 // React required
 import React from "react";
 // Data / Collections
-import { animals } from "../database/animals/allAnimals";
-import { breedList } from "../database/animals/allAnimalWithBreed";
+import { animals } from "../database/animals/all_animals";
+import { breedList } from "../database/animals/filter_breed";
 // -------------- Application Begins Bellow ------------ \\
 
 // Main Home Function
