@@ -1,5 +1,5 @@
 /*
- * This file is exported to all_carnivors.js
+ * This file is exported to all_mammals.js
  */
 import { bovines as a } from "./bovidae/all_bovines";
 import { swines as b } from "./suina/all_swines";
@@ -40,4 +40,4 @@ const ungulates = [
     }
 ];
 
-export { ungulates };
+export { ungulates, a , b };

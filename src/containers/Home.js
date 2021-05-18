@@ -1,16 +1,59 @@
 // This file is exported to ---> src/Routes.js
 // React required
-import React from "react";
+import React, { useEffect, useState } from "react";
 // Data / Collections
-import { animals } from "../database/animals/all_animals";
+//import { animals } from "../database/animals/all_animals";
 import { breedList } from "../database/animals/filter_breed";
 // -------------- Application Begins Bellow ------------ \\
 
 // Main Home Function
 export default function Home() {
 
-    console.log(animals);
-    console.log(breedList);
+    // Important variables
+    const [isLoading, setIsLoading] = useState(false); 
+    const [data, setData] = useState([]);
+
+    // working with data
+    useEffect(() => {
+
+        // Cleanup variable
+        let unmounted = false;
+
+        // Start loading
+        setIsLoading(true);
+
+        // Load Function
+        async function onLoad() {
+
+            try {
+                if (!unmounted) {
+
+                    // setting breed list to data
+                    setData(breedList);
+                }
+            } catch (e) {
+
+                alert(e);
+            }
+
+            // Stop loading
+            setIsLoading(false);
+        }
+
+        // Returning onLoad Function
+        onLoad();
+
+        // Avoid post leaks by cleaning up useEffect with "unmounted" variable set to true
+        return () => {
+            unmounted = true;
+            setData([]);
+        };
+
+    // Our clean up happens whenever the post changes or we leave the page
+    }, []);
+
+    //console.log(animals);
+    //console.log(breedList);
 
     // Return UI
     return (
@@ -33,7 +76,7 @@ export default function Home() {
                 <div className="col-md-6 p-0">
 
                     {/* Breeds Component */}
-                    <Breeds />
+                    <Breeds isLoading={isLoading} data={data} />
 
                 </div>
             </div>
@@ -150,9 +193,12 @@ function NewSpecies() {
 }
 
 // Breeds Component
-function Breeds() {
+function Breeds(props) {
 
-    // Return UIi
+    // Important variables
+    const { data, isLoading } = props;
+
+    // Return UI
     return (
         <div className="bg-light border-top py-5 p-3 border-left">
             <div className="row m-0">
@@ -175,29 +221,18 @@ function Breeds() {
                         <strong> Notable breeds </strong>
                     </h3>
 
-                    {/* Button Group */}
-                    <div className="row m-0">
-                        {
-                            breedList.map((breed, i) => {
+                    {/* Button Component */}
+                    {!isLoading && data
 
-                                // Important variables
-                                const name = breed.name;
-                                const count = breed.count_species;
+                        // Button
+                        ? <Button data={data} />
 
-                                // Return UI
-                                return (
-                                    <div className="col-md-6 p-0 px-2" key={i++}>
-                                        <button
-                                            type="button"
-                                            className="btn btn-primary alert-primary border-primary text-capitalize mb-2 shadow-sm w-100"
-                                        >
-                                                <b> {name} </b> - <span> { count } species </span>
-                                        </button>
-                                    </div>
-                                    );
-                            })
-                        }
-                    </div>
+                        // Loading
+                        : <div className="p-3 text-center w-100">
+                            <span className="spinner-border text-muted"></span>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>
@@ -405,5 +440,37 @@ function Blog() {
                 </div>
             </div>
         </div>
+        );
+}
+
+// Button Component
+function Button(props) {
+
+    // Important variables
+    const { data } = props;
+
+    // Return UI
+    return (
+        <div className="row m-0">
+                { data.map((the, i) => {
+
+                    // Important variables
+                    const name = the.name;
+                    const count = the.count_species;
+
+                    // Return UI
+                    return (
+                        <div className="col-md-6 p-0 px-2" key={i++}>
+                            <button
+                                type="button"
+                                className="btn btn-primary alert-primary border-primary text-capitalize mb-2 shadow-sm w-100"
+                            >
+                                <b> {name} </b> - <span> {count} species </span>
+                            </button>
+                        </div>
+                    );
+                })}
+
+            </div>
         );
 }

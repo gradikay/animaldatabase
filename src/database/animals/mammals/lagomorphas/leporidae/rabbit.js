@@ -1,24 +1,24 @@
 /*
  * This file is exported to all_equines.js
  */
-import { donkeysAZ as a } from "./donkeyAZ";
+import { rabbitsAZ as a } from "./rabbitAZ";
 // ---------------- Applilcation starts ------------------ \\
 
-// Declaring an empty array for all domestic donkeys
+// Declaring an empty array for all domestic rabbits
 const list = [];
 
-// adding all donkeys together list
+// adding all rabbits together list
 const all = list.concat(a);
 
-// Counting all donkeys in collection
-const count = all.length; // count all species of donkeys
+// Counting all rabbits in collection
+const count = all.length; // count all species of rabbits
 
-// Setting variables for donkeys
+// Setting variables for rabbits
 // This variables includes all facts, description, and miscellaneous 
-// attributes about / for domestic donkeys
-const donkeys = [
+// attributes about / for domestic rabbits
+const rabbits = [
     {
-        "name": "donkeys",
+        "name": "rabbits",
         "scientific_name": "equus africanus asinus",
         "type": "species",
         "other_name": [],
@@ -30,4 +30,4 @@ const donkeys = [
     }
 ];
 
-export { donkeys };
+export { rabbits };

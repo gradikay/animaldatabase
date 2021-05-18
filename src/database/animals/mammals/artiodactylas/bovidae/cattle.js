@@ -4,6 +4,9 @@
 import { cattlesA as a } from "./cattleA";
 import { cattlesB as b } from "./cattleB";
 import { cattlesCD as c } from "./cattleCD";
+/*
+ * This file is exported to all_bovines.js
+ */
 import { cattlesEH as d } from "./cattleEH";
 import { cattlesIZ as e } from "./cattleIZ";
 // ---------------- Applilcation starts ------------------ \\

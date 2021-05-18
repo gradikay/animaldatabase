@@ -44,4 +44,4 @@ const carnivors = [
     }
 ];
 
-export { carnivors };
+export { carnivors, a, b };
